@@ -1,28 +1,29 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
 #include <cctype>
+#include <csstring>
 unsigned int faStr1(const char *str) {
     unsigned int word_count=0;
     bool word=false;
     bool accepted=true;
     
-    for(int i=0;i<strlen(str);i++){
-        if(str[i]==' '){
-            if(word&&accepted){
+    for(int i=0;i<strlen(str);i++) {
+        if(str[i]==' ') {
+            if(word&&accepted) {
                 word_count++;
             }
             word=false;
             accepted=true;
-        }else{
-            if(!word){
+        }else {
+            if(!word) {
                 word=true;
             }
-            if(isdigit(str[i])){
+            if(isdigit(str[i])) {
                 accepted=false;
             }
         }
     }
-    if(word&&accepted){
+    if(word&&accepted) {
         word_count++;
     }
     return word_count;
@@ -33,29 +34,29 @@ unsigned int faStr2(const char *str) {
     bool word=false;
     bool accepted=true;
 
-    for(int i=0;i<strlen(str);i++){
-        if(str[i]==' '){
-            if(word&&accepted){
+    for(int i=0;i<strlen(str);i++) {
+        if(str[i]==' ') {
+            if(word&&accepted) {
                 word_count++;
             }
             word=false;
             accepted=true;
-        }else{
-            if(!word){
-                if(str[i]>='A'&&str[i]<='Z'){
+        }else {
+            if(!word) {
+                if(str[i]>='A'&&str[i]<='Z') {
                     accepted=true;
-                }else{
+                }else {
                     accepted=false;
                 }
                  word=true;
-            }else{
-                if(str[i]<'a'||str[i]>'z'){
+            }else {
+                if(str[i]<'a'||str[i]>'z') {
                     accepted=false;
                 }
             }
         }
     }
-    if(word&&accepted){
+    if(word&&accepted) {
         word_count++;
     }
     return word_count;
@@ -67,20 +68,20 @@ unsigned int faStr3(const char *str) {
     bool word=false;
     unsigned int curr_length=0;
 
-    for(int i=0; i<strlen(str); i++){
-        if(str[i]==' '){
-            if(word){
+    for(int i=0; i<strlen(str); i++) {
+        if(str[i]==' ') {
+            if(word) {
                 length+=curr_length;
                 word_count++;
                 curr_length=0;
             }
             word=false;
-        }else{
+        }else {
             word=true;
             curr_length++;
         }
     }
-    if(word){
+    if(word) {
         length+=curr_length;
         word_count++;
     }
