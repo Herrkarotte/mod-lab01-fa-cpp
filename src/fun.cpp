@@ -15,8 +15,7 @@ unsigned int faStr1(const char* str) {
             }
             word = false;
             accepted = true;
-        }
-        else {
+        } else {
             if (!word) {
                 word = true;
             }
@@ -43,18 +42,15 @@ unsigned int faStr2(const char* str) {
             }
             word = false;
             accepted = true;
-        }
-        else {
+        } else {
             if (!word) {
                 if (str[i] >= 'A' && str[i] <= 'Z') {
                     accepted = true;
-                }
-                else {
+                } else {
                     accepted = false;
                 }
                 word = true;
-            }
-            else {
+            } else {
                 if (str[i] < 'a' || str[i] > 'z') {
                     accepted = false;
                 }
@@ -81,8 +77,7 @@ unsigned int faStr3(const char* str) {
                 curr_length = 0;
             }
             word = false;
-        }
-        else {
+        } else {
             word = true;
             curr_length++;
         }
