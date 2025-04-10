@@ -86,7 +86,7 @@ unsigned int faStr3(const char *str) {
         length += curr_length;
         word_count++;
     }
-    double avg = (double)length / word_count;
+    double avg = static_cast<double>(length) / word_count;
 
     return (unsigned int)(avg + 0.5);
 }
